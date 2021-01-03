@@ -1,0 +1,33 @@
+# PLEASEREADMEFIRST
+# This is a setup that I have used to prepare for CS2040C (C++ variant) and I hope this eventually helps those who have yet to set uo their C++ Environments for future modules
+# For me personally, there wasn't much problems with the installation but by any chance, if any of you encounter issues where it doesn't work
+# Please check online for any resolves on those issues, if not there are also other alternatives online to setting this up
+# And if you were to resolve those issues, you may notify me in the github "Issues" tab, so I can modify or add on to the list for troubleshooting which can potentially help others in the future.
+##########################################################################################################################################################################################
+Setting up C++17 on Dev C++ IDE
+1. Download the Dev C++ from https://sourceforge.net/projects/orwelldevcpp/
+2. Run the installation file to install Dev C++
+3. Next, download from https://nuwen.net/files/mingw/mingw-17.1.exe
+4. Run the executable and set the "Extract to:" path to C:\ before starting the extraction.
+5. After the extraction/installation has been completed, open up your environment variables
+	a. Multiple ways to do so, but the easiest is just search for in using the "search tool" on the taskbar
+	b. Then type "env" and click enter, you should able to see the "System Properties" Window with the "Advanced" Tab appearing
+	c. Click on "Environment Variables" > Under "System Variables" > Click on "Path" and then "Edit"
+	d. Next, click on "New" to add the path of the recently installed binary. In my case is "C:\MinGW\bin" and should be the same for yours unless u decide to place it elsewhere.
+	e. Remember to apply the edits and settings before closing the windows.
+	f. To test if the edits were done correctly, open up your command prompt and type "gcc --version", it should now show gcc 9.2.0
+6. Back to Dev C++, click on "Tools" > "Compiler Options"
+	a. Here, it will be a little confusing cause there are 2 "+" buttons, simply hover over to see which one is "Add a compiler set by Folder"
+	b. Click on that "+" with the corresponding "Add a compiler set by Folder" and click on c:\MinGW folder and click "Ok"
+	c. It should auto detect the compiler set's name as MinGW GCC 9.2.0
+7. Done!
+
+
+
+Troubleshooting
+1. If your compiler still acts up, some people have stated that a fix would to change the textbox content of "Add the following commands when calling the linker"
+	a. Change everything in the text box to "-static-libstdc++ -std=c++17" and click "OK"
+2. If you encounter Windows Defender Prompt whenever running the C++ Code on Dev C++.
+	a. https://answers.microsoft.com/en-us/windows/forum/windows_10-security/window-defender-blocking-dev-c/ec03cc63-b8e6-4253-8b26-acf006fe24ed
+	b. Alternatively, I would suggest creating a specific folder for all your C++ codes
+		i. Then, under "Virus & Threat Protection Settings" > "Manage Settings" > Scroll down to Exclusions and add the path of the project folder/code folder (Whatever you call it)
